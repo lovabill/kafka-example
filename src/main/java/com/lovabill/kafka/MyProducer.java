@@ -30,7 +30,7 @@ public class MyProducer {
     }
 
     public void sendMessage(String message) {
-        ProducerRecord<String, String> data = new ProducerRecord<>(topic, message);
+        ProducerRecord<String, String> data = new ProducerRecord<>(topic, "message", message);
         long startTime = System.currentTimeMillis();
         producer.send(data);
         long elapsedTime = System.currentTimeMillis() - startTime;
